@@ -1,0 +1,88 @@
+#p1 {
+    float: left;
+}
+
+#p2 {
+    float: right;
+    display: flex;
+}
+
+.StartQuiz {
+    text-align: center;
+    padding-top: 7%;
+    clear: both;
+    width: 60%;
+    margin: auto;
+    display: "";
+}
+
+#h2a {
+    margin: auto;
+    width: 27%;
+}
+
+#p3 {
+    font-size: 30px;
+}
+
+.StartButt {
+    display: block;
+    text-align: center;
+    width: 60px;
+    margin: auto;
+    margin-top: 30px;
+}
+.Questionbox {
+    padding-top: 7%;
+    clear: both;
+    width: 60%;
+    margin: auto;
+    display: none;
+}
+
+#Questioni {
+    font-size: 30px;
+}
+
+.QuestionButton {
+    display: block;
+    margin: 10px 10px 10px 0px;
+}
+
+.RightorWrong {
+    display: none;
+    color: gray;
+    font-size: 20px;
+}
+
+.EndofQuiz {
+    padding-top: 7%;
+    clear: both;
+    width: 60%;
+    margin: auto;
+    display: none;
+    font-size: 30px;
+}
+
+.HighScores {
+    padding-top: 7%;
+    clear: both;
+    width: 60%;
+    margin: auto;
+    display: none;
+}
+
+#h2c {
+    font-size: 30px;
+}
+
+
+li {
+    border: 1px solid black;
+    height: 35px;
+    font-size: 30px;
+    padding: 2px;
+}
+
+
+

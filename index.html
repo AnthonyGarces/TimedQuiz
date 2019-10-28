@@ -10,33 +10,35 @@
 
 <body>
     <div id="header">
-        <p>High Scores</p>
-        <p>Timer: <span class="Timer">75</span></p>
+        <p id="p1">High Scores</p>
+        <p id="p2">Timer: <span class="Timer">75</span></p>
     </div>
     <div class="StartQuiz">
-        <h2>Timed Coding Quiz</h2>
-        <p>Welcome to my timed quiz on some of the basics of javascript! Try your best to complete the quiz in as little time as possible, and enter the hall of fame!</p>
+        <h2 id="h2a">Timed Coding Quiz</h2>
+        <p id="p3">Welcome to my timed quiz on some of the basics of javascript! Try your best to complete the quiz in as little time as possible, and enter the hall of fame!</p>
         <button class="StartButt">Start</button>
     </div>
     <div class="Questionbox">
-        <h4 id="Question1">"</h4>
-        <button class="Answer1">""</button>
-        <button class="Answer2">""</button>
-        <button class="Answer3">""</button>
-        <button class="Answer4">""</button>
+        <h4 id="Questioni">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate reiciendis esse officiis incidunt cumque eius tempora nulla ipsum, ducimus possimus, tenetur saepe quaerat ullam deleniti vero quas doloremque facere repellat.</h4>
+        <button class="Answer1 QuestionButton">""</button>
+        <button class="Answer2 QuestionButton">""</button>
+        <button class="Answer3 QuestionButton">""</button>
+        <button class="Answer4 QuestionButton">""</button>
         <hr>
-        <p class="RightorWrong">"</p>
+        <p class="RightorWrong">Right!</p>
     </div>
     <div class="EndofQuiz">
-        <h2>All Done!</h2>
-        <p>Your score is <span class="EOQscore">0</p>
-        <form class="IniForm" placeholder="Initials" type="text"></form>
-        <button class="IniSubmit">submit</button>
+        <h2 id="h2b">All Done!</h2>
+        <p id="p4">Your score is <span class="EOQscore">0</p>
+        <form>
+            <input placeholder="Initial here" type="text"></input>
+            <button class="IniSubmit" type="submit">Submit</button>
+        </form>
     </div>
     <div class="HighScores">
-        <h2>High Scores</h2>
-        <ol class="ScoreList">
-            <li id="testlist">AEG</li>
+        <h2 id="h2c">High Scores</h2>
+        <ol class="NameList">
+            <li class="Namelistitem">AEG</li>
         </ol>
     </div>
   <script src="script.js"></script>
