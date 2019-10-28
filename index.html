@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Timed JS Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header">
+        <p>High Scores</p>
+        <p>Timer: <span class="Timer">75</span></p>
+    </div>
+    <div class="StartQuiz">
+        <h2>Timed Coding Quiz</h2>
+        <p>Welcome to my timed quiz on some of the basics of javascript! Try your best to complete the quiz in as little time as possible, and enter the hall of fame!</p>
+        <button class="StartButt">Start</button>
+    </div>
+    <div class="Questionbox">
+        <h4 id="Question1">"</h4>
+        <button class="Answer1">""</button>
+        <button class="Answer2">""</button>
+        <button class="Answer3">""</button>
+        <button class="Answer4">""</button>
+        <hr>
+        <p class="RightorWrong">"</p>
+    </div>
+    <div class="EndofQuiz">
+        <h2>All Done!</h2>
+        <p>Your score is <span class="EOQscore">0</p>
+        <form class="IniForm" placeholder="Initials" type="text"></form>
+        <button class="IniSubmit">submit</button>
+    </div>
+    <div class="HighScores">
+        <h2>High Scores</h2>
+        <ol class="ScoreList">
+            <li id="testlist">AEG</li>
+        </ol>
+    </div>
+  <script src="script.js"></script>
+</body>
+</html>
