@@ -10,8 +10,26 @@ var answerEl = document.getElementsByClassName("RightorWrong");
 var answerSubmitEl = document.getElementsByClassName("Inisubmit");
 var scoreListEl = document.getElementsByClassName("NameList");
 var startButt = document.getElementsByClassName("StartButt");
+var timer = document.getElementById("Timer");
+var seconds = 75;
 
 //do this for each element in the html to make it easier to reference in the javascript
+function startTimer() {
+    var interval = setInterval(function() {
+        seconds--;
+        console.log(seconds);
+        timer.innerHTML =" " + seconds + " seconds";
+
+        if (seconds == 0) {
+            clearInterval(interval);
+        }
+    }, 1000);
+
+}
+
+startTimer();
+
+// function setup()
 
 // blank timer id
     //set interval (function(time))
