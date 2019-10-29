@@ -27,7 +27,7 @@ function startTimer() {
 
 }
 
-startTimer();
+
 
 // function setup()
 
