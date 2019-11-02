@@ -16,16 +16,25 @@
     <div class="StartQuiz">
         <h2 id="h2a">Timed Coding Quiz</h2>
         <p id="p3">Welcome to my timed quiz on some of the basics of javascript! Try your best to complete the quiz in as little time as possible, and enter the hall of fame!</p>
-        <button class="StartButt" onclick=startTimer()>Start</button>
+        <button class="StartButt" onclick="startTimer(); startQuiz()"">Start</button>
     </div>
     <div class="Questionbox">
-        <h4 id="Questioni">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate reiciendis esse officiis incidunt cumque eius tempora nulla ipsum, ducimus possimus, tenetur saepe quaerat ullam deleniti vero quas doloremque facere repellat.</h4>
-        <button class="Answer1 QuestionButton">""</button>
-        <button class="Answer2 QuestionButton">""</button>
-        <button class="Answer3 QuestionButton">""</button>
-        <button class="Answer4 QuestionButton">""</button>
+        <h4 class="Questioni"><span class="spaceBox">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nostrum, modi sapiente cumque nesciunt quo provident rerum cupiditate nemo! Ipsum accusantium officiis delectus consequuntur dolor? Quidem odio praesentium eius ipsam!</span></h4>
+        <button id="Answer1" class = "QuestionButton" onclick="returnID(this.id)">
+            <span class="questBox1"></span>
+        </button>
+        <button id="Answer2" class = "QuestionButton" onclick="returnID(this.id)">
+            <span class="questBox2"></span>
+        </button>
+       <button id="Answer3" class = "QuestionButton" onclick="returnID(this.id)">
+            <span class="questBox3"></span>
+        </button>
+        <button id="Answer4" class = "QuestionButton" onclick="returnID(this.id)">
+            <span class="questBox4"></span>
+        </button>
         <hr>
-        <p class="RightorWrong">Right!</p>
+        <p class="Right">Right!</p>
+        <p class="Wrong">Wrong!</p>
     </div>
     <div class="EndofQuiz">
         <h2 id="h2b">All Done!</h2>
@@ -41,7 +50,8 @@
             <li class="Namelistitem">AEG</li>
         </ol>
     </div>
-  <script src="script.js"></script>
-  <script src="questions.js"></script>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+  
 </body>
 </html>

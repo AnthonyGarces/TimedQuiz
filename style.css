@@ -49,7 +49,13 @@
     margin: 10px 10px 10px 0px;
 }
 
-.RightorWrong {
+.Right {
+    display: none;
+    color: gray;
+    font-size: 20px;
+}
+
+.Wrong {
     display: none;
     color: gray;
     font-size: 20px;
