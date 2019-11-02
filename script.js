@@ -29,6 +29,11 @@ function startQuiz() {
     questionBoxEl[0].setAttribute("style", 'display: block'); 
 };
 
+function endQuiz () {
+    questionBoxEl[0].setAttribute("style", "display: none");
+    endOfQuizEl[0].setAttribute("style", 'display: block');
+}
+
 //each button has this function attached which gives us the id of the clicked button
 function returnID(clicked_ID) {
     clickedButtonID = clicked_ID;
@@ -74,20 +79,27 @@ function runGame(){
     questionButton[0].addEventListener('click', event => {
         changeQuestion(x++);
         isRight();
-    })
+    });
     questionButton[1].addEventListener('click', event => {
         changeQuestion(x++);
         isRight();
-    })
+    });
     questionButton[2].addEventListener('click', event => {
         changeQuestion(x++);
         isRight();
-    })
+    });    
     questionButton[3].addEventListener('click', event => {
         changeQuestion(x++);
         isRight();
     })
-    
+
+    //what I'm trying to do below is change the divs to the high score div once x has been increased to 5
+    //for some reason when I run this here, it'll send you straight from the starting div to the form div
+    //without cycling through the questions.
+
+    if (x = 5){
+        endQuiz();
+    };
     
 };
     
@@ -105,10 +117,11 @@ function startGame() {
     
     //change the startQuizEl to questBoxEl //working
     startQuiz();
-    
+    console.log(seconds);
     //display the answer 
     runGame();
     
+    // endQuiz();
     
 }
 
