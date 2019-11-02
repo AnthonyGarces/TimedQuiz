@@ -20,48 +20,82 @@ var questBox1El = document.getElementsByClassName("questBox1");
 var questBox2El = document.getElementsByClassName("questBox2");
 var questBox3El = document.getElementsByClassName("questBox3");
 var questBox4El = document.getElementsByClassName("questBox4");
+var clickedButtonID = "";
+var rightAnswer;
 
+//working, changes the screen to the question box
 function startQuiz() {
     startQuizEl[0].setAttribute("style", "display: none");
     questionBoxEl[0].setAttribute("style", 'display: block'); 
 };
 
-function changeQuestion() {
-    for (var i = 0; i < questions.length; i++) {
-        spaceBoxEl[0].innerText = questions[i].title;
-        questBox1El[0].innerHTML = questions[i].Choices[0];
-        questBox2El[0].innerHTML = questions[i].Choices[1];
-        questBox3El[0].innerHTML = questions[i].Choices[2];
-        questBox4El[0].innerHTML = questions[i].Choices[3];
-        
-        var rightAnswer = questions[i].answer;
-        //need to identify the clicked button, and check the html of that button against the right answer from questions.js
-        function returnID(clicked_ID) {
-            return clicked_ID;
-        };
-        var clickedButtonID = returnID(clicked_ID);
-        
-        //if the button html is the right answer, display Right! else display Wrong!
-        if (clickedButtonID.innerHTML === rightAnswer) {
-            RightEl[0].setAttribute("style", "display: block");
-        } else {
-            WrongEl[0].setAttribute("style", "display: block");
-            seconds - 5;
-        }
-        //when a button is pressed, add 1 to i and iterate it all over again
-        questionButton.addEventListener('click', event => {
-            i++;
-        });
+//each button has this function attached which gives us the id of the clicked button
+function returnID(clicked_ID) {
+    clickedButtonID = clicked_ID;
+};
 
+//Not sure why this isn't working, but the questions past the 1st aren't registering the correct answer.
+//They're all wrong,even when I click the right answer
+//it seems like the issue here is that isRight is iterating once for the first question and then never again
+//it needs to run after each iteration in runGame()
+function isRight() {
+    //if the id of the clicked button === the id of the answer it should display Right!
+    if (clickedButtonID === rightAnswer) {
+        console.log(clickedButtonID + "-" + rightAnswer)
+        rightEl[0].setAttribute("style", "display: block");
+        wrongEl[0].setAttribute("style", "display: none")
+    } else {
+        //if they're wrong it should display Wrong! and subtract 5 from the timer
+        wrongEl[0].setAttribute("style", "display: block");
+        rightEl[0].setAttribute("style", "display: none");
+        seconds - 5;
     }
-}
+};
+
+//function that dynamically changes the text based on the iteration and gives a value
+function changeQuestion(x) {
+    spaceBoxEl[0].innerText = questions[x].title;
+    questBox1El[0].innerHTML = questions[x].Choices[0];
+    questBox2El[0].innerHTML = questions[x].Choices[1];
+    questBox3El[0].innerHTML = questions[x].Choices[2];
+    questBox4El[0].innerHTML = questions[x].Choices[3];
+     
+    rightAnswer = questions[x].answer;
+        
+};
+    
+
+    
+
+//this function will display the questions after clicking on the button
+function runGame(){
+    var x = 0
+    changeQuestion(x);
+    questionButton[0].addEventListener('click', event => {
+        changeQuestion(x++);
+        isRight();
+    })
+    questionButton[1].addEventListener('click', event => {
+        changeQuestion(x++);
+        isRight();
+    })
+    questionButton[2].addEventListener('click', event => {
+        changeQuestion(x++);
+        isRight();
+    })
+    questionButton[3].addEventListener('click', event => {
+        changeQuestion(x++);
+        isRight();
+    })
+    
+    
+};
     
 //do this for each element in the html to make it easier to reference in the javascript
 function startGame() {
     //starts the timer //working
     var interval = setInterval(function() {
         seconds--;
-        console.log(seconds);
         timer.innerHTML =" " + seconds + " seconds";
 
         if (seconds === 0) {
@@ -72,10 +106,9 @@ function startGame() {
     //change the startQuizEl to questBoxEl //working
     startQuiz();
     
-    //Add the questions and buttons to questBoxEl from questions.js
-    //checks the clicked button against the answer from questions.js //not working
     //display the answer 
-    changeQuestion();
+    runGame();
+    
     
 }
 
